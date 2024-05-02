@@ -1,0 +1,316 @@
+:root {
+    --biscuit: #9a6440;
+    --icing: #fff;
+    --fill: #ffd4b7;
+    --purple: #ffe6c9;
+    --grey: #ccc;
+    --green: #008773;
+    --sky: #ff4d00;
+    --rose: #ffffff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--purple);
+}
+
+p {
+    margin-top: 1vh;
+    text-align: center;
+    color: var(--rose);
+    text-transform: capitalize;
+    font-family: 'URW Chancery L', cursive;
+    font-weight: 900;
+    font-size: 2.5em;
+}
+
+#initialScreen {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+.message {
+    position: relative;
+    top: 1100px;
+    text-align: justify;
+    font-family: monospace;
+    width: 1000px;
+    font-weight: lighter;
+    text-transform: none; /* Ensures text case is not automatically altered */
+    text-shadow: 
+        0px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+#panda {
+    position: relative;
+    bottom: 60px;
+    left: 215px;
+    right: 0px;
+    width:130px;
+    height:100px;
+}
+#mainContent {
+    transform:scale(0.7);
+    position: relative;
+    bottom: 250px;
+}
+button {
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 160px;
+}
+
+#initialScreen, #mainContent {
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+#initialScreen {
+    position: absolute;
+    top:0;
+    opacity: 1;
+    visibility: visible;
+}
+
+#mainContent {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#kevni {
+    position: relative;
+    padding-bottom: 50px;
+    top: 1700px;
+    left: 1400px;
+    transform:scale(5);
+}
+
+#title {
+    position: relative;
+    top: 40px;
+    width: 700px;
+    height: 400px;
+}
+#name {
+    font-size: 2em;
+    font-family: cursive;
+    font-weight: 400;
+}
+
+.box {
+    display: box;
+    position: relative;
+    width: 700px;
+    height: 700px;
+    margin: auto;
+}
+
+.plate {
+    position: absolute;
+    width: 70%;
+    height: 40%;
+    border-radius: 50%;
+    background: var(--grey);
+    bottom: 10%;
+    left: 15%;
+    box-shadow: -7px 25px 53px -2px rgba(0, 0, 0, 0.78);
+}
+
+.layer,
+.icing {
+    background: var(--biscuit);
+    position: absolute;
+    bottom: 17.5%;
+    left: 23%;
+    width: 55%;
+    height: 35%;
+    border-radius: 50%;
+}
+
+.layer:nth-of-type(2) {
+    background: var(--biscuit);
+    bottom: 33%;
+    height: 33%;
+    z-index: 1;
+}
+
+
+.layer::after,
+.layer:before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    bottom: -10%;
+    height: 70%;
+    width: 100%;
+    border-radius: 50%;
+    background: var(--biscuit);
+}
+
+.layer::before {
+    bottom: 10%;
+    top: 10%;
+}
+
+.fill {
+    background: var(--fill);
+    border: 2px solid var(--fill);
+    position: absolute;
+    bottom: 20%;
+    left: -.5%;
+    width: 100%;
+    height: 80%;
+    border-radius: 50%;
+}
+
+.icing {
+    background: rgb(225, 105, 41);
+    top: 27%;
+    height: 25%;
+    z-index: 2;
+}
+
+.icing-sm {
+    position: absolute;
+    background: rgb(225, 105, 41);
+    height: 50%;
+    width: 10%;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    top: 45%;
+}
+
+.icing-sm:nth-of-type(2) {
+    height: 70%;
+    top: 70%;
+    left: 25%;
+}
+
+.icing-sm:nth-of-type(3) {
+    width: 15%;
+    height: 80%;
+    top: 50%;
+    right: 15%;
+}
+
+.icing-sm:nth-of-type(4),
+.icing-sm:nth-of-type(5),
+.icing-sm:nth-of-type(6) {
+    height: 30%;
+    width: 7%;
+    top: 85%;
+    left: 45%;
+    background: rgb(225, 105, 41);
+}
+
+.icing-sm:nth-of-type(5) {
+    left: 12%;
+    top: 70%;
+}
+
+.icing-sm:nth-of-type(6) {
+    left: 92%;
+    top: 56%;
+    background: rgb(225, 105, 41);
+}
+
+.flame {
+    /* make it square */
+    aspect-ratio: 1;
+    /* position it at the center of the screen */
+    position: absolute;
+    bottom: 570px;
+    left: 330px;
+    /* really in the center + tilt clockwise*/
+    transform: scale(1.6) rotate(45deg); /* Adjust the scale factor as needed */
+
+    /* temporary for demo, so the shape is visible */
+    background:
+        radial-gradient(100% 100% at 90% 90%, rgba(255, 157, 0, 0.533), #cb703b, #eebd7600 50%),
+        radial-gradient(farthest-side at 110% 120%, rgba(255, 136, 0, 0.533), #d58f39, #eebd7600),
+        radial-gradient(at 100% 100%, rgba(255, 132, 0, 0.533), #cb533b, #eebd7600 60%),
+        linear-gradient(135deg, #fff0 20%, rgb(255, 166, 0)),
+        rgb(252, 235, 160);
+    box-shadow:
+        inset 2px 2px 2px -1.5px #f808,
+        inset -1px -1px 5px -3px #00f7,
+        inset -1px -1px 2px #fc08,
+        -0.5px -0.5px 1px rgba(255, 213, 0, 0.533),
+        -1px -1px 2px #ce8447,
+        -6px -6px 35px 3px rgba(255, 94, 0, 0.4);
+    filter: blur(0px);
+    animation: burn 4s infinite;
+}
+
+
+@keyframes burn {
+
+    0%,
+    100% {
+        border-radius: 5% 87% 35% 85%;
+        width: 30px;
+    }
+
+    10% {
+        border-radius: 5% 85% 39% 82%;
+    }
+
+    20% {
+        border-radius: 0% 85% 35% 87%;
+        width: 30px;
+    }
+
+    30%,
+    90% {
+        border-radius: 5% 85% 39% 82%;
+    }
+
+    40% {
+        border-radius: 0% 85% 35% 87%;
+        width: 32px;
+    }
+
+    50% {
+        border-radius: 2% 87% 32% 90%;
+    }
+
+    60% {
+        border-radius: 5% 97% 35% 88%;
+    }
+
+    70% {
+        border-radius: 2% 87% 32% 90%;
+        width: 31px
+    }
+
+    80% {
+        border-radius: 5% 97% 35% 88%;
+    }
+}
+
+img {
+    position: absolute;
+    bottom: 440px;
+    left: 52%;
+    transform: translateX(-60%);
+    width: 100px;
+    height: 180px;
+    filter: blur(0.4px);
+    filter: saturate(85%);
+    z-index: 100;
+}
+
